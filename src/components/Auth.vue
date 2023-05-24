@@ -22,12 +22,10 @@ const authorize = async () => {
 <template>
   <Notifier />
   <div v-if="state.user && isAuthenticated">
-   <slot/>
+    <slot />
   </div>
   <div v-else>
     <h1>Not Authenticated</h1>
-    <button class="btn-get" @click.prevent="loginWithRedirect()">
-      Login
-    </button>
+    <button class="btn-get" @click.prevent="loginWithRedirect()">Login</button>
   </div>
 </template>

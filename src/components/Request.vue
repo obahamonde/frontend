@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { useRequest } from "~/composables/request";
 
-const { request, response, iserror, isloading, lastResponseTime } = useRequest();
+const { request, response, iserror, isloading, lastResponseTime } =
+  useRequest();
 
 const allowed = computed(() => {
   const now = Number(useNow().value);
@@ -45,7 +46,6 @@ const fetchData = async () => {
   }
 };
 
-
 const { state } = useStore();
 
 onMounted(async () => {
@@ -70,7 +70,7 @@ const loaderActive = computed(() => isloading.value);
 </script>
 
 <template>
-<div v-if="!iserror && !loaderActive && response">
+  <div v-if="!iserror && !loaderActive && response">
     <slot :json="response"></slot>
   </div>
   <div v-else-if="iserror">

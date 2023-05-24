@@ -6,10 +6,12 @@ const props = defineProps({
     type: String,
     required: false,
     default: "/api/sse",
-  }
+  },
 });
 
-const { messages, eventSource, status: thisStatus } = useSSE(props);
+const rxProps = reactive(props);
+
+const { messages, eventSource, status: thisStatus } = useSSE(rxProps);
 const status = computed<"OPEN" | "CLOSED" | "CONNECTING">(
   () => thisStatus.value
 );
@@ -25,14 +27,13 @@ watch(
     if (newVal === "CLOSED") {
       emit("closed");
     }
-  })
-
-
+  }
+);
 </script>
 <template>
   <div v-if="status === 'OPEN'">
-    <div v-for="message in messages">
-              <slot :sse="message"></slot>
+    <div>
+      <slot :sse="messages"></slot>
     </div>
   </div>
   <div v-else-if="status === 'CONNECTING'">
@@ -41,10 +42,9 @@ watch(
     </slot>
   </div>
   <div v-else-if="status === 'CLOSED'">
-    <slot name="error">
+    <slot name="error" :sse="messages">
       <p class="text-error">Connection closed</p>
     </slot>
-    <slot name="actions">
-    </slot>
+    <slot name="actions"> </slot>
   </div>
 </template>

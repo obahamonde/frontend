@@ -1,6 +1,6 @@
 <template>
   <transition name="modal">
-    <div class="fixed z-10 inset-0 overflow-y-auto " @click.self="emit('close')">
+    <div class="fixed z-10 inset-0 overflow-y-auto" @click.self="emit('close')">
       <div class="flex items-center justify-center">
         <div class="rounded-lg shadow-lg p-8 backdrop-blur-lg sh">
           <div class="modal-header">
@@ -11,14 +11,15 @@
           <slot name="body">
             <!-- Default body content can be placed here -->
           </slot>
-           <div row center>
-          <slot name="footer">
-              
-            </slot>
-         <button class="btn-del dark:btn-get" @click="emit('close')">Close</button></div> 
+          <div row center>
+            <slot name="footer"> </slot>
+            <button class="btn-del dark:btn-get" @click="emit('close')">
+              Close
+            </button>
           </div>
         </div>
       </div>
+    </div>
   </transition>
 </template>
 
@@ -35,8 +36,7 @@ const emit = defineEmits(["close"]);
 .modal-enter,
 .modal-leave-to
 
-/* .modal-leave-active in <2.6 */
-  {
+/* .modal-leave-active in <2.6 */ {
   opacity: 0;
 }
 </style>

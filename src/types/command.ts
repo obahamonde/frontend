@@ -1,5 +1,5 @@
 export type Command = {
-    namespace: string;
-    command?: string;
-    args?: string[];
+  namespace: string;
+  command?: string;
+  args?: string[];
 };

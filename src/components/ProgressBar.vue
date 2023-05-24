@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { CSSProperties } from 'vue';
+import { CSSProperties } from "vue";
 
 const props = defineProps({
   completed: {
@@ -20,10 +20,8 @@ const fillerStyles = computed<CSSProperties>(() => {
     height: "2rem",
     borderRadius: "inherit",
     textAlign: "right",
-
   };
 });
-
 </script>
 <template>
   <h1 class="title">Progress:</h1>
@@ -53,6 +51,6 @@ const fillerStyles = computed<CSSProperties>(() => {
 .title {
   font-size: 1.5rem;
   color: #000000;
-    margin-left: 50px;
-  }
+  margin-left: 50px;
+}
 </style>

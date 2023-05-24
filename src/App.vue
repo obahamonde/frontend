@@ -1,5 +1,3 @@
 <template>
- <Auth>
-  <RouterView/>
- </Auth>
+      <RouterView />
 </template>
