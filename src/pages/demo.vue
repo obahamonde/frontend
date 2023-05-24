@@ -1,12 +1,10 @@
 <template>
-  <Auth>
+ 
+      <h1>Hello world</h1>
 
 
 
 
-
-
-  </Auth>
 </template>
 <route lang="yaml">
   meta:

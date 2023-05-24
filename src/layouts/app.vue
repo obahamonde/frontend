@@ -1,6 +1,8 @@
 <template>
-  <Dark />
-  <NavBar />
-  <RouterView />
-  <Footer />
+       <Auth>
+      <Dark />
+      <NavBar />
+      <RouterView />
+      <Footer />
+      </Auth>
 </template>

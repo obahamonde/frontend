@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { state } = useStore();
 const triggered = ref(false);
-</script>
+</script> 
 <template>
   <button @click="triggered = true">Get VSCode</button>
   <Request
