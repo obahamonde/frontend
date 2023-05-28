@@ -16,6 +16,7 @@ declare module '@vue/runtime-core' {
     CodeServer: typeof import('./components/CodeServer.vue')['default']
     Dark: typeof import('./components/Dark.vue')['default']
     DatabaseKey: typeof import('./components/DatabaseKey.vue')['default']
+    DeployRepo: typeof import('./components/DeployRepo.vue')['default']
     DockerPull: typeof import('./components/DockerPull.vue')['default']
     Editor: typeof import('./components/Editor.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']

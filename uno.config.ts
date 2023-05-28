@@ -56,7 +56,7 @@ export default defineConfig({
     ],
     [
       "btn-del",
-      "dark:invert m-2 bg-danger text-light rounded-lg shadow-warning hover:bg-warning hover:text-danger hover:shadow-danger shadow-md px-4 py-2 cp hover:scale-110 hover:transition-all duration-200 ease-in-out hover:cursor-pointer hover:font-extrabold hover:underline",
+      "dark:invert m-2 bg-error text-light rounded-lg shadow-warning hover:bg-warning hover:text-error hover:shadow-error shadow-md px-4 py-2 cp hover:scale-110 hover:transition-all duration-200 ease-in-out hover:cursor-pointer hover:font-extrabold hover:underline",
     ],
     [
       "btn-post",
@@ -111,7 +111,7 @@ export default defineConfig({
       secondary: "#6F9B9B",
       accent: "#000",
       warning: "#FFBCB9",
-      danger: "#E4615D",
+      error: "#E4615D",
       info: "#B7D0D0",
       success: "#BEF264",
     },

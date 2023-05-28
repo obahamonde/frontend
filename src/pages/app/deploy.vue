@@ -1,8 +1,7 @@
-<script setup lang="ts">
-
-</script>
-<template></template>
+<template>
+  <DeployRepo />
+</template>
 <route lang="yaml">
-  meta:
-    layout: app
+meta:
+  layout: app
 </route>

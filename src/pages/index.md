@@ -1,4 +1,11 @@
-# AioFauna
+---
+title: AioFauna
+---
+
+<div class="text-center">
+  <Icon icon="mdi-bird" class="text-4xl text-primary -mb-2 m-auto" />
+  <h1 class="text-primary">AioFauna</h1>
+</div>
 
 <div class="row start gap-4 scale-50">
 <img src="https://img.shields.io/badge/Python-3.7%2B-blue.svg" alt="Python 3.7+"  >
@@ -30,16 +37,18 @@ Bring your FaunaDB secret key to the party:
 export FAUNA_SECRET_KEY=your-secret-key
 ```
 
-You can grab it here 😉
+You can grab it from here 😉
 
 <DatabaseKey />
 
-> Note: Now you are ready to go! 🚀, you can choose to get started with the tutorial or dig a little deeper on the about section.
+> Note: Now you are ready to go! 🚀, you can choose to get started with the <a href="/demo">tutorial</a> or dig a little deeper on the about section.
 
 <br/>
 
 [Get Started](/docs)
 
-[About](/cabout)
+[About](/about)
 
+<br/>
+<br/>
 <br/>

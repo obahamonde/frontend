@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { useAuth0 } from '@auth0/auth0-vue'
-const { state } = useStore()
-const { logout } = useAuth0()
-
-
+import { useAuth0 } from "@auth0/auth0-vue";
+const { state } = useStore();
+const { logout } = useAuth0();
 </script>
 <template>
   <div class="col center p-12 gap-4">
@@ -14,6 +12,6 @@ const { logout } = useAuth0()
   </div>
 </template>
 <route lang="yaml">
-  meta:
-    layout: app
+meta:
+  layout: app
 </route>

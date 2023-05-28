@@ -1,15 +1,17 @@
 <script setup lang="ts">
 const { state } = useStore();
 const triggered = ref(false);
-</script> 
+</script>
 <template>
-  <button @click="triggered = true">Get VSCode</button>
+  <button @click="triggered = true" class="btn-get">Run CodeServer</button>
   <Request
     :url="'/api/codeserver?ref=' + state.user.ref"
     v-if="state.user && triggered"
   >
     <template #default="{ json }">
-      {{ json }}
+      <a :href="'https://' + json.user + '.smartpro.solutions'" target="_blank">
+        Click to go to CodeServer
+      </a>
     </template>
   </Request>
 </template>

@@ -1,11 +1,10 @@
 ---
-title: Design Decisions
+title: About
 ---
 
 <div class="text-center">
-  <!-- You can use Vue components inside markdown -->
-  <div i-carbon-dicom-overlay class="text-4xl -mb-6 m-auto" />
-  <h3>Why AioFauna:</h3>
+  <Icon icon="mdi-information" class="text-4xl text-primary -mb-2 m-auto" />
+  <h1 class="text-primary">Why AioFauna?</h1>
 </div>
 
 ## What is AioFauna?

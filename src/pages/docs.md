@@ -1,7 +1,11 @@
 ---
 title: Docs
 ---
-# Foundational Concepts
+
+<div class="text-center">
+  <Icon icon="mdi-document" class="text-4xl text-primary -mb-2 m-auto" />
+  <h1 class="text-primary">Core Concepts</h1>
+</div>
 
 ## About HTTP
 
@@ -75,6 +79,6 @@ The primary goal was to develop an asynchronous ODM for FaunaDB, since was found
 
 <img src='/aiofauna.drawio.svg'/>
 
-# Example Application
-
-I thought a useful example application to showcase the flexibility and power of the framework would be to build a CI/CD platform to deploy AioFauna Apps.
+<br/>
+<br/>
+<br/>

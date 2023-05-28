@@ -9,8 +9,6 @@ import Markdown from "vite-plugin-vue-markdown";
 import LinkAttributes from "markdown-it-link-attributes";
 import Unocss from "unocss/vite";
 import Shiki from "markdown-it-shiki";
-
-// @ts-expect-error failed to resolve types
 import VueMacros from "unplugin-vue-macros/vite";
 import WebfontDownload from "vite-plugin-webfont-dl";
 
@@ -24,7 +22,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://127.0.0.1:8080/api",
+        target: "http://localhost:8080/api",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
         ws: true,
