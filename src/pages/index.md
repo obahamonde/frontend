@@ -13,6 +13,8 @@ title: AioFauna
 <img src="https://img.shields.io/badge/Python-3.9%2B-blue.svg" alt="Python 3.9+"  >
 </div>
 
+<User />
+
 **AioFauna** is an **opinionated** python full-stack framework, focused on productivity and performance. Alieviating the decision fatigue of choosing the right tools for the job, AioFauna provides a set of batteries included tools to build your next project.
 
 ## Features
@@ -41,11 +43,13 @@ You can grab it from here 😉
 
 <DatabaseKey />
 
-> Note: Now you are ready to go! 🚀, you can choose to get started with the <a href="/demo">tutorial</a> or dig a little deeper on the about section.
+> Note: Now you are ready to go! 🚀, you can choose to get started with the <a href="/tutorial">tutorial</a> or dig a little deeper on the <a href="/about">about</a> section, if you want a comprehensive explanation of the technology check the <a href="/docs">docs</a>.
 
 <br/>
 
-[Get Started](/docs)
+[QuickStart](/tutorial)
+
+[Docs](/docs)
 
 [About](/about)
 

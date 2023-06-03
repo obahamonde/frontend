@@ -11,3 +11,5 @@ cypress/downloads
 
 # Local Netlify folder
 .netlify
+.env
+aiofauna.rsa.pem

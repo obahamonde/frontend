@@ -9,7 +9,7 @@ const triggered = ref(false);
     v-if="state.user && triggered"
   >
     <template #default="{ json }">
-      <a :href="'https://' + json.user + '.smartpro.solutions'" target="_blank">
+        <a :href="json.url" target="_blank">
         Click to go to CodeServer
       </a>
     </template>

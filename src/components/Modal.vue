@@ -13,9 +13,6 @@
           </slot>
           <div row center>
             <slot name="footer"> </slot>
-            <button class="btn-del dark:btn-get" @click="emit('close')">
-              Close
-            </button>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 <template>
-  <h1>Welcome!</h1>
+    <p>Chart</p>
+    <canvas ref="canvasRef"></canvas>
 </template>
 <route lang="yaml">
 meta:

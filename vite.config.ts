@@ -22,7 +22,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:8080/api",
+        target: "https://www.smartpro.solutions/api",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
         ws: true,
@@ -51,7 +51,7 @@ export default defineConfig({
     AutoImport({
       imports: ["vue", "vue-router", "@vueuse/head", "@vueuse/core"],
       dts: "src/auto-imports.d.ts",
-      dirs: ["src/composables", "src/store"],
+      dirs: ["src/composables", "src/store", "src/types"],
       vueTemplate: true,
     }),
 

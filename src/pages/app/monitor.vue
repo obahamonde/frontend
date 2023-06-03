@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
-<template></template>
-<route lang="yaml">
-meta:
-  layout: app
-</route>
+
+<template>
+  <p>Chart Comes here</p>
+  <canvas ref="chartRef"></canvas>
+</template>

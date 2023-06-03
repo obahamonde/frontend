@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const filesData = ref<
-  { name: string; size: number; type: string; lastModified: number }[]
+  { name: string; size: number; contentType: string; lastModified: number }[]
 >([]);
 function onDrop(files: File[] | null) {
   filesData.value = [];
@@ -8,7 +8,7 @@ function onDrop(files: File[] | null) {
     filesData.value = files.map((file) => ({
       name: file.name,
       size: file.size,
-      type: file.type,
+      contentType: file.type,
       lastModified: file.lastModified,
     }));
   }
@@ -46,10 +46,3 @@ const { isOverDropZone } = useDropZone(dropZoneRef, onDrop);
     </div>
   </div>
 </template>
-<style scoped>
-.dropzone {
-  @apply col center my-4 mx-2d w-full h-full border-2 border-dashed border-gray-800 rounded-md;
-  @apply bg-gray-100 text-gray-800 text-center text-sm font-medium transition-colors duration-150 ease-in-out;
-  @apply px-4 py-4 cp opacity-50 hover: opacity-100;
-}
-</style>

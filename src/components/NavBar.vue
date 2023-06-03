@@ -16,10 +16,15 @@ const routes = ref([
     to: "/docs",
   },
   {
+    name: "Tutorial",
+    icon: "mdi-school",
+    to: "/tutorial",
+  },
+  {
     name: "Demo",
     icon: "mdi-desktop-mac-dashboard",
-    to: "/demo",
-  },
+    to: "/demo"
+  }
 ]);
 </script>
 

@@ -7,18 +7,20 @@ const copy = (text: string) => {
 </script>
 <template>
   <h1 class="text-title m-8">Your Resources</h1>
-  <div class="row gap-8 center">
-    <Request :url="'/api/codeserver?ref=' + state.user!.ref">
-      <template #default="{ json }">
-        <div class="col center p-12 gap-4 bg-gray-300 rounded sh">
-          <h1 class="text-xl font-bol text-primary">Code Server Instance</h1>
-          <Icon icon="logos:visual-studio-code" class="w-12 h-12" />
-          <p><strong>Image: </strong> {{ json.image }}</p>
-          <p><strong>External Port: </strong>{{ json.port }}</p>
-          <p><strong>Subdomain name: </strong>{{ json.user }}</p>
-          <p>
-            <strong>Created: </strong
-            >{{ new Date(Number(json.ts)).toLocaleString() }}
+                      <div class="row gap-8 center">
+                        <Request :url="'/api/codeserver?ref=' + state.user!.ref">
+                          <template #default="{ json }">
+                            <div class="col center p-12 gap-4 bg-gray-300 rounded sh">
+                              <h1 class="text-xl font-bol text-primary">Code Server Instance</h1>
+                              <Icon icon="logos:visual-studio-code" class="w-12 h-12" />
+                              <p><strong>Image: </strong> {{ json.image }}</p>
+                              <p><strong>External Port: </strong>{{ json.port }}</p>
+                                      <p><a :href="json.url" class="cp hover:underline
+                                drop-shadow drop-color-gray-500 sh px-4 py-2 bg-gray-200 rounded-lg
+                                
+                                " target="_blank">Open Code Server</a></p>
+                                  <p>
+                            
           </p>
         </div>
       </template>

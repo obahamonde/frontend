@@ -7,6 +7,7 @@ Visual Studio Code is arguably one of the best tools on the market for writing c
 
 Code-server is a fork of Monaco Editor, the same editor that powers VS Code, with features like IntelliSense, debugging, and Git integration. The project is open source under the MIT license, and will be our default IDE, indeed you can run an instance of Code-Server instantly on the cloud by clicking on the button below:
 
+
 <CodeServer/>
 
 Now you should be in a plain VSCode like IDE. Your password is the same as your ref id number.
@@ -63,6 +64,7 @@ Let's start coding our first `aiofauna` app.
 Let's create a new file called `main.py` and add the following code:
 
 ```python
+# main.py
 from aiofauna import Api
 
 app = Api()
@@ -86,15 +88,12 @@ With this now we can create our model and our CRUD endpoints:
 
 ```python
 
-from aiofauna import FaunaModel, Field, Optional
-
+from aiofauna import FaunaModel, Field, Optional, render_template
 
 class Todo(FaunaModel):
     title: str = Field(..., unique=True)
     completed: bool = Field(default=False, index=True)
     description: Optional[str] = Field(None)
-
-
 
 @app.get("/api/todos")
 async def get_todos():
@@ -106,18 +105,15 @@ async def create_todo(todo: Todo):
     """Create a new todo"""
     return await todo.save()
 
-
 @app.put("/api/todos")
 async def update_todo(ref: str):
     """Update a todo"""
     return await Todo.update(ref, completed=True)
 
-
 @app.delete("/api/todos")
 async def delete_todo(ref: str):
     """Delete a todo"""
     return await Todo.delete(ref)
-
 
 @app.on_event("startup")
 async def startup(_):
@@ -142,6 +138,7 @@ Now we can test each endpoint to see if it works as expected:
 Now let's create a beautiful frontend for our app.
 
 ```html
+<!--templates/index.html-->
 <head>
   <link
     rel="stylesheet"
@@ -288,9 +285,23 @@ Now let's create a beautiful frontend for our app.
 
 > Let's take in account that we changed the delimiters of the Vue app to `[[` `]]` so they don't get overlapped by Jinja2 syntax.
 
+Now let's modify our root endpoint to serve the frontend:
+
+```python
+
+from aiofauna import render_template
+
+
+@app.get("/")
+async def index():
+  """Front End"""
+  return render_template("index.html")
+```
+
 With this we have our Todo App ready to be deployed, let's create a `Dockerfile` to build our image:
 
 ```dockerfile
+# Dockerfile
 FROM python:3.9.7-slim-buster
 
 ARG LOCAL_PATH
@@ -301,7 +312,7 @@ COPY ${LOCAL_PATH} /app
 
 RUN pip install -r requirements.txt
 
-CMD ["aiofauna","dev"]
+CMD ["python","main.py"]
 ```
 
 We will also need a `requirements.txt` file:
@@ -320,9 +331,20 @@ By default the tarball downloaded from github is prepended by the `[owner][repo]
     email = <your@email.here>
 ```
 
-Once your repo is published on Github, let's jump into the deployment section:
+Once your repo is published on Github, let's jump into the deployment section, input your Github username and repo name on the form below, and click on the `Deploy` button.
 
 <DeployRepo/>
+
+It will take no more than 30 seconds to deploy your app.
+
+Then click on the `Visit your brand new App!` button and see it live:
+
+<img src="/app.png"/>
+
+And that's how you build a serverless full-stack app with AioFauna framework!
+
+<User />
+
 <br/>
 <br/>
 <br/>
