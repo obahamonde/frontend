@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useAuth0 } from "@auth0/auth0-vue";
 const { state } = useStore();
-const { isAuthenticated, logout } = useAuth0();
+const { isAuthenticated, logout, loginWithRedirect } = useAuth0();
 const showModal = ref(false);
 </script>
 <template>
@@ -12,6 +12,14 @@ const showModal = ref(false);
   >
     <img :src="state.user.picture" class="rf sh" />
   </div>
+  <div v-else class="x4 scale cp br fixed m-4">
+    <Icon
+      icon="mdi-login"
+      class="rf text-error x2"
+      @click="loginWithRedirect()"
+    />
+  </div>
+
   <Modal v-if="showModal" @close="showModal = false">
     <template #header>
       <p class="drop-shadow drop-shadow-color-blueGray font-sans">
@@ -27,4 +35,5 @@ const showModal = ref(false);
       <button class="btn-del" @click="logout()">Logout</button>
     </template>
   </Modal>
+  <Chatbot />
 </template>

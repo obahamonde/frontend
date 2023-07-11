@@ -1,6 +1,7 @@
-<script setup lang="ts"></script>
-
 <template>
-  <p>Chart Comes here</p>
-  <canvas ref="chartRef"></canvas>
+  <DeployChatbot />
 </template>
+<route lang="yaml">
+meta:
+  layout: app
+</route>

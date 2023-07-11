@@ -23,8 +23,8 @@ const routes = ref([
   {
     name: "Demo",
     icon: "mdi-desktop-mac-dashboard",
-    to: "/demo"
-  }
+    to: "/app",
+  },
 ]);
 </script>
 
@@ -63,7 +63,6 @@ const routes = ref([
 
 <style global>
 .router-link-active {
-  background-color: #9ca3af;
   color: #fff;
 }
 </style>

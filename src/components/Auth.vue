@@ -10,7 +10,13 @@ watch(user, async () => {
 
 const authorize = async () => {
   const token = await getAccessTokenSilently();
-  const res = await fetch("/api/auth?token=" + token);
+  state.token = token;
+  const res = await fetch("/api/auth", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
   const data = await res.json();
   state.notifications.push({
     message: "Welcome " + user.value.name,
@@ -25,7 +31,11 @@ const authorize = async () => {
     <slot />
   </div>
   <div v-else>
-    <h1>Not Authenticated</h1>
-    <button class="btn-get" @click.prevent="loginWithRedirect()">Login</button>
+    <div class="container">
+      <h1>Not Authenticated</h1>
+      <button class="btn-get" @click.prevent="loginWithRedirect()">
+        Login
+      </button>
+    </div>
   </div>
 </template>

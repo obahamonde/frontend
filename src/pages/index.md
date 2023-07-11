@@ -41,8 +41,6 @@ export FAUNA_SECRET_KEY=your-secret-key
 
 You can grab it from here 😉
 
-<DatabaseKey />
-
 > Note: Now you are ready to go! 🚀, you can choose to get started with the <a href="/tutorial">tutorial</a> or dig a little deeper on the <a href="/about">about</a> section, if you want a comprehensive explanation of the technology check the <a href="/docs">docs</a>.
 
 <br/>

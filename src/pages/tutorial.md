@@ -7,7 +7,6 @@ Visual Studio Code is arguably one of the best tools on the market for writing c
 
 Code-server is a fork of Monaco Editor, the same editor that powers VS Code, with features like IntelliSense, debugging, and Git integration. The project is open source under the MIT license, and will be our default IDE, indeed you can run an instance of Code-Server instantly on the cloud by clicking on the button below:
 
-
 <CodeServer/>
 
 Now you should be in a plain VSCode like IDE. Your password is the same as your ref id number.

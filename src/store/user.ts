@@ -5,27 +5,16 @@ export const useStore = defineStore("state", () => {
   const state = reactive({
     notifications: [] as Notification[],
     user: null as User | null,
-    messages: [] as Message[],
-    currentFile: {
-      name: "",
-      content: "",
-    },
-    codeSpace: null as any | null,
+    token: null as string | null,
   });
 
   const setState = (newState: any) => {
     Object.assign(state, newState);
   };
 
-  const addMessage = (message: Message[]) => {
-    state.messages.unshift(...message);
-    return state.messages;
-  };
-
   return {
     state,
     setState,
-    addMessage,
   };
 });
 

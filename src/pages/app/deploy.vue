@@ -1,5 +1,5 @@
 <template>
-  <DeployRepo />
+  <DeployChatbot />
 </template>
 <route lang="yaml">
 meta:

@@ -24,33 +24,36 @@ const fillerStyles = computed<CSSProperties>(() => {
 });
 </script>
 <template>
-  <h1 class="title">Progress:</h1>
-  <div class="container">
-    <div :style="fillerStyles">
-      <span class="label">{{ `${completed}%` }}</span>
+  <main class="container">
+    <h1 class="title">
+      Your website is being saved to your chatbot's memory. This might take a
+      while.
+    </h1>
+    <div class="bar">
+      <div :style="fillerStyles">
+        <span class="label">{{ `${completed}%` }}</span>
+      </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.container {
+.bar {
   height: 2rem;
   width: 40rem;
-  background-color: #e0e0de;
-  border-radius: 50px;
-  margin: 50px;
+  background-color: #b5b8bf;
+  @apply row start rounded-lg w-full;
 }
 
 .label {
   padding: 5px;
-  color: white;
   font-weight: bold;
+  @apply row center text-white text-xs px-4 py-2;
 }
 
 .title {
-  font-size: 1.5rem;
-  color: #000000;
-  margin-left: 50px;
+  @apply font-script py-4 px-2;
+  color: #008080;
 }
 </style>
